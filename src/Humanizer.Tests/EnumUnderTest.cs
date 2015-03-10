@@ -22,6 +22,8 @@ namespace Humanizer.Tests
         MemberWithDisplayAttribute,
         [Display(Description = "MemberWithLocalizedDisplayAttribute", ResourceType = typeof(EnumTestsResources))]
         MemberWithLocalizedDisplayAttribute
+        [Display(Name = EnumTestsResources.MemberWithDisplayAttributeAndNameInsteadOfDescription)]
+        MemberWithDisplayAttributeAndNameInsteadOfDescription,
     }
 
     public class EnumTestsResources
@@ -36,6 +38,7 @@ namespace Humanizer.Tests
         public const string MemberWithoutDescriptionAttributeLowerCase = "member without description attribute";
         public const string MemberWithDisplayAttribute = "Description from Display attribute";
         public static string MemberWithLocalizedDisplayAttribute { get { return "Localized description from Display attribute"; } }
+        public const string MemberWithDisplayAttributeAndNameInsteadOfDescription = "Name from Display attribute";
     }
 
     public class ImposterDescriptionAttribute : Attribute
