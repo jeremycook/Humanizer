@@ -49,7 +49,11 @@ namespace Humanizer
                 {
                     var method = attrType.GetMethod(DisplayAttributeGetDescriptionMethodName);
                     if (method != null)
-                        return method.Invoke(attr, new object[0]).ToString();
+                    {
+                        var result = method.Invoke(attr, new object[0]);
+                        if (result != null)
+                            return result.ToString();
+                    }
                 }
                 var descriptionProperty =
                     attrType.GetProperties()
