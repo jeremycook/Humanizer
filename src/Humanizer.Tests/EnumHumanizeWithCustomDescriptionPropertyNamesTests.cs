@@ -31,5 +31,11 @@ namespace Humanizer.Tests
         {
             Assert.Equal(EnumTestsResources.MemberWithoutDescriptionAttributeSentence, EnumUnderTest.MemberWithoutDescriptionAttribute.Humanize());
         }
+
+        [Fact]
+        public void CanHumanizeMembersWithDisplayAttributeAndNullDescription()
+        {
+            Assert.Equal(EnumTestsResources.MemberWithDisplayAttributeAndNameInsteadOfDescription, EnumUnderTest.MemberWithDisplayAttributeAndNameInsteadOfDescription.Humanize());
+        }
     }
 }
